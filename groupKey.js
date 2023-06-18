@@ -3,7 +3,7 @@ function group(array, keySelector, valueSelector) {
         (map, key, i) => map.set(key, (map.get(key) || []).concat(valueSelector(array[i]))), new Map(),); */
     array.map((key , i ) => {
         console.log(key.artist);
-        if (!map.get(key.artist))) let map = new Map();
+        if (!map.get(key.artist)) let map = new Map();
     })
 
 }
