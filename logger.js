@@ -29,9 +29,10 @@ const result = cosLogger(Math.PI);*/
 let log = '';
 function logger(func, logFunc) {
     const newFn = (...x) => {
-        logFunc(`${func.name}(${x}) starts\n`);
+        const argList = x.map((x) => JSON.stringify(x)).join(',');
+        logFunc(`${func.name}(${argList}) starts\n`);
         const res = func(...x);
-        logFunc(`${func.name}(${x}) ends\n`);
+        logFunc(`${func.name}(${argList}) ends\n`);
         return res;
     };
     return newFn;
